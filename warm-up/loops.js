@@ -109,5 +109,25 @@ function largestOddInSubstring(num){
 }
 console.log(largestOddInSubstring("124875048538302474058"));
 
+// count digit
 
 
+function countdigits(num){
+  num = Math.abs(num); //corner case for negative numbers
+  if (num === 0 ) {
+    return 1;
+  }
+  let count = 0;
+  while ( num > 0 ){
+   num = Math.floor(num/10);
+  count = count + 1;
+
+  }
+   return count;
+}
+
+console.log("digits : " + countdigits(-583252350232363));
+
+console.log(Math.round(967.3));
+console.log(Math.floor(2.7));
+console.log(Math.ceil(3.2));

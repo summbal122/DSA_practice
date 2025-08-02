@@ -121,7 +121,6 @@ const intersectionUnsorted = () => {
   for ( let num of arr2)
     if (set1.has(num)){
       result.add(num);
-
     }
     return [...result];
   

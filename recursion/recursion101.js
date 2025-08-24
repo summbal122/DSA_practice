@@ -17,3 +17,11 @@ function sumOfNum(n){
 
 }
 console.log(sumOfNum(5));
+
+function sumArrayElements(arr, i=0){
+  if(i === arr.length) return 0;
+  return arr[i] + sumArrayElements(arr, i + 1);
+
+}
+
+console.log(sumArrayElements([5,3,2,0,1]))

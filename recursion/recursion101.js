@@ -25,3 +25,17 @@ function sumArrayElements(arr, i=0){
 }
 
 console.log(sumArrayElements([5,3,2,0,1]))
+
+
+// sum of only odd numbers
+
+
+
+// factorial of n
+function factorial (n){
+
+  if(n === 1) return 1;
+   return n * factorial(n-1)
+
+}
+console.log(factorial(5))

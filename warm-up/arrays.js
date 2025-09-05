@@ -70,7 +70,6 @@ return -1;
 console.log(searchNum());
 
 
-
 // max min
 let max = arraySearch[0];
 let min = arraySearch[0];

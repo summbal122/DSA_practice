@@ -8,7 +8,7 @@ function selectionSort(arr){
         minIndex = j;
       }
        }
-    if(minIndex !== i){
+    if(minIndex !== i){ // only check if minIndex and i are not the same
       let temp = arr[i];
      arr[i] = arr[minIndex];
       arr[minIndex] = temp;

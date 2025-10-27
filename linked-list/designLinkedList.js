@@ -30,6 +30,7 @@ function addAtTail(val){
 }
 
 function addAtIndex(index, val){
+    if (index < 0 || index > this.size) return;
   let newNode = new Node(val);
 
   if (index === 0){ //add at first index
@@ -47,5 +48,27 @@ function addAtIndex(index, val){
   curr.next = newNode;
 
   }
+
+}
+
+function getIndex(index){
+  if ( index < 0 || index >= this.size) return -1
+  let curr = this.head;    
+  for (i = 0; i< index; i++){
+    curr = curr.next
+  }
+  return curr.val;
+}
+
+function deleteAtIndex(index){
+  if ( index < 0 || index >= this.size) return -1
+   if (index === 0 ){
+    this.head = this.head.next
+     }
+   let curr = this.head
+    for (let i = 0; i< index-1 ; i++){
+        curr = curr.next
+    }
+    curr.next = curr.next.next
 
 }

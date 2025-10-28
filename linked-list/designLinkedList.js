@@ -1,74 +1,83 @@
-function LinkedList(){
+function LinkedList() {
   this.head = null;
-  this.size = 0;
+  this.size = 0;  // constructor function
 }
-function Node(val){
-  this.val=val;
-  this.next=null;
+
+function Node(val) {
+  this.val = val;
+  this.next = null;
 }
-function addAtHead(val){
-  let newNode = new Node(val)
+
+// Add node at head
+LinkedList.prototype.addAtHead = function (val) {
+  let newNode = new Node(val); //linked list has a .prototype property which is an object having methods that instances share
   newNode.next = this.head;
   this.head = newNode;
-  this.size = this.size +1
-}
+  this.size++;
+};
 
-function addAtTail(val){
-    let newNode = new Node(val)
-  if (this.head === null){
-  
-    this.head = newNode;
-    
-  } else {
-      let curr = this.head;
-  while(curr.next !== null){
-    curr = curr.next;
-  }
-  curr.next = newNode;
-
-  }
-}
-
-function addAtIndex(index, val){
-    if (index < 0 || index > this.size) return;
+// Add node at tail
+LinkedList.prototype.addAtTail = function (val) {
   let newNode = new Node(val);
 
-  if (index === 0){ //add at first index
-     this.addAtHead(val)
-     return
-  } else if (index ===this.size){ //add at last index
-    this.addAtTail(val)
-    return
+  if (this.head === null) {
+    this.head = newNode;
   } else {
-      let curr = this.head;
-  for(let i = 0; i < index - 1 ; i ++){
-    curr = curr.next
-  }
-  newNode.next = curr.next; // don't change order
-  curr.next = newNode;
-
+    let curr = this.head;
+    while (curr.next !== null) {
+      curr = curr.next;
+    }
+    curr.next = newNode;
   }
 
-}
+  this.size++;
+};
 
-function getIndex(index){
-  if ( index < 0 || index >= this.size) return -1
-  let curr = this.head;    
-  for (i = 0; i< index; i++){
-    curr = curr.next
+// Add node at index
+LinkedList.prototype.addAtIndex = function (index, val) {
+  if (index < 0 || index > this.size) return;
+
+  if (index === 0) {
+    this.addAtHead(val);
+    return;
+  } else if (index === this.size) {
+    this.addAtTail(val);
+    return;
+  } else {
+    let newNode = new Node(val);
+    let curr = this.head;
+    for (let i = 0; i < index - 1; i++) {
+      curr = curr.next;
+    }
+    newNode.next = curr.next;
+    curr.next = newNode;
+    this.size++;
+  }
+};
+
+// Get value at index
+LinkedList.prototype.getIndex = function (index) {
+  if (index < 0 || index >= this.size) return -1;
+
+  let curr = this.head;
+  for (let i = 0; i < index; i++) {
+    curr = curr.next;
   }
   return curr.val;
-}
+};
 
-function deleteAtIndex(index){
-  if ( index < 0 || index >= this.size) return -1
-   if (index === 0 ){
-    this.head = this.head.next
-     }
-   let curr = this.head
-    for (let i = 0; i< index-1 ; i++){
-        curr = curr.next
+// Delete node at index
+LinkedList.prototype.deleteAtIndex = function (index) {
+  if (index < 0 || index >= this.size) return;
+
+  if (index === 0) {
+    this.head = this.head.next;
+  } else {
+    let curr = this.head;
+    for (let i = 0; i < index - 1; i++) {
+      curr = curr.next;
     }
-    curr.next = curr.next.next
-
-}
+    curr.next = curr.next.next;
+  }
+  this.size--;
+};

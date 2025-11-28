@@ -1,0 +1,14 @@
+function reverseLinkedList (head){
+  let prev = null;
+  let curr = head;
+  let temp;
+  while (curr !== null){
+    temp = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = temp;
+  }
+  head = prev;
+  return head;
+
+}

@@ -5,7 +5,7 @@ function LinkedList(){
 
 function Node(val){
   this.val= val;
-  this.next= null; //end of the list
+  this.next= null;
 }
 
 LinkedList.prototype.addAtHead = function (val){

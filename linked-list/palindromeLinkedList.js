@@ -33,3 +33,26 @@ var isPalindrome = function(head) {
 
   return true;
 };
+
+
+// using array
+
+function palindrome (head){
+  let curr = head;
+  let arr = [];
+  while (curr !== null){
+    arr.push(curr.val)
+    curr = curr.next
+  } 
+  let mid = Math.floor(arr.length / 2)
+  let left = 0;
+  let right = arr.length - 1
+  while ( left < mid){
+    if (arr[left] !== arr[right]){
+      return false
+    }
+    left++;
+right--;
+  }
+  return true
+}

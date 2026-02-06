@@ -9,3 +9,7 @@ function removeDuplicates(nums){
  return nums.slice(0, k + 1);
   }
 console.log(removeDuplicates([1,2,2,4,6,7,8,9,9,10,11,11,13,15,18,20]))
+
+
+let str = "ejfnmc"
+let reversed = str.split("").reverse.join("")

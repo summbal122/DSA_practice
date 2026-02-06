@@ -15,3 +15,15 @@ function insertionSort(arr){
 
 }
 console.log(insertionSort([7,4,3,5,1,2]))
+
+
+function hasDuplicate(arr){
+  let set = new Set();
+  for(let x of arr){ // actual value, not index
+    if(set.has(x)){
+      return ture
+    } else
+      set.add(x)
+  }
+  return false
+}

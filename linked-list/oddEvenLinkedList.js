@@ -4,7 +4,7 @@ let odd = head;
 let even = head.next;
 let evenHead = even; // to connect odd.next to even head because we have to join both
 
-while( even !== null && even.next !==null){n
+while(even && even.next){
   odd.next = odd.next.next
   odd = odd.next
   even.next = even.next.next //can't read next of null
